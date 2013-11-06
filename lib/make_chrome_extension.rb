@@ -10,7 +10,7 @@ module MakeChromeExtension
   end
 
   def make_manifest(app_name)
-      contents <<- EOF
+      contents <<- "EOF"
 {
 	"manifest_version": 2,
 	"name": "#{app_name}",
@@ -34,6 +34,6 @@ module MakeChromeExtension
       EOF
       manifest_file = File.open("manifest.json", "w")
       manifest_file.write(contents)
-      manifest_file.close       
+      manifest_file.close
   end
 end
