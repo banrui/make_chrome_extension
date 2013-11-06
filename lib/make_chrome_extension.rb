@@ -44,7 +44,7 @@ module MakeChromeExtension
   end
   
   def self.make_background_item(app_name)
-      background_html_contens = <<-"EOF"
+      background_html_contents = <<-"EOF"
 <html>
 	<head>
 		<script type="text/javascript" src="./background.js"></script>
@@ -54,10 +54,10 @@ module MakeChromeExtension
 </html>
       EOF
       background_html_file = File.open("./#{app_name}/background.html", "w")
-      background_html_file.write(background_html_contens)
+      background_html_file.write(background_html_contents)
       background_html_file.close
 
-      background_js_contens = <<-"EOF"
+      background_js_contents = <<-"EOF"
 chrome.browserAction.onClicked.addListener(function(activeTab) {
 							       var newURL = "options.html";
 							       chrome.tabs.create({
@@ -66,12 +66,12 @@ chrome.browserAction.onClicked.addListener(function(activeTab) {
 });
       EOF
       background_js_file = File.open("./#{app_name}/background.html", "w")
-      background_js_file.write(background_js_contens)
+      background_js_file.write(background_js_contents)
       background_js_file.close
   end
 
   def self.make_readme(app_name)
-            readme_contens = <<-"EOF"
+            readme_contents = <<-"EOF"
 <html>
 	<head>
 		<script type="text/javascript" src="./background.js"></script>
@@ -86,7 +86,7 @@ chrome.browserAction.onClicked.addListener(function(activeTab) {
   end
 
   def self.make_option(app_name)
-      option_html_contens = <<-"EOF"
+      option_html_contents = <<-"EOF"
 <html>
         <head>
                 <title>Optio page</title>
