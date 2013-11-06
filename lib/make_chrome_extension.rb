@@ -10,7 +10,7 @@ module MakeChromeExtension
       make_manifest(app_name)
   end
 
-  def make_manifest(app_name)
+  def self.make_manifest(app_name)
       contents = <<-"EOF"
 {
 	"manifest_version": 2,
