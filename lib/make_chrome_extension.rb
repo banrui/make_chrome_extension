@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require "make_chrome_extension/version"
 
 module MakeChromeExtension
