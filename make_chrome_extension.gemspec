@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = MakeChromeExtension::VERSION
   spec.authors       = ["banrui"]
   spec.email         = ["bando.rui@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = "this gem make template of chrome extension"
+  spec.summary       = "this gem make template of chrome extension"
+  spec.homepage      = "https://github.com/banrui/make_chrome_extension"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
