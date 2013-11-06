@@ -97,7 +97,7 @@ chrome.browserAction.onClicked.addListener(function(activeTab) {
         </body>
 </html>
       EOF
-      option_html_file = File.open("./#{app_name}/option.html", "w")
+      option_html_file = File.open("./#{app_name}/options.html", "w")
       option_html_file.write(option_html_contents)
       option_html_file.close
   end
