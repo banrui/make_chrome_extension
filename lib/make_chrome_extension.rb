@@ -25,11 +25,11 @@ module MakeChromeExtension
 //		 "128": "images/128.png"
 //		 },
 //TODO	"permissions": ["http://*/*", "https://*/*"],
-	"background": {
-		      "scripts": ["background.js"]
-		      },
 //	"options_page": "options.html",
 //	"web_accessible_resources": ["images/48.png"]
+	"background": {
+		      "scripts": ["background.js"]
+		      }
 }
       EOF
       manifest_file = File.open("manifest.json", "w")
