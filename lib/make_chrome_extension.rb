@@ -8,6 +8,11 @@ module MakeChromeExtension
       
       # make manifest file
       make_manifest(app_name)
+      make_background_item(app_name)
+      make_readme(app_name)
+      make_option(app_name)
+
+      puts "Finish making template file of chrome extension for you !!"
   end
 
   def self.make_manifest(app_name)
@@ -38,7 +43,7 @@ module MakeChromeExtension
       manifest_file.close
   end
   
-  def self.background_item
+  def self.make_background_item(app_name)
       background_html_contens = <<-"EOF"
 <html>
 	<head>
@@ -49,7 +54,7 @@ module MakeChromeExtension
 </html>
       EOF
       background_html_file = File.open("./#{app_name}/background.html", "w")
-      background_html_file.write(contents)
+      background_html_file.write(background_html_contens)
       background_html_file.close
 
       background_js_contens = <<-"EOF"
@@ -61,7 +66,39 @@ chrome.browserAction.onClicked.addListener(function(activeTab) {
 });
       EOF
       background_js_file = File.open("./#{app_name}/background.html", "w")
-      background_js_file.write(contents)
+      background_js_file.write(background_js_contens)
       background_js_file.close
-  end  
+  end
+
+  def self.make_readme(app_name)
+            readme_contens = <<-"EOF"
+<html>
+	<head>
+		<script type="text/javascript" src="./background.js"></script>
+	</head>
+	<body>
+	</body>
+</html>
+      EOF
+      readme_file = File.open("./#{app_name}/README.md", "w")
+      readme_file.write(readme_contents)
+      readme_file.close
+  end
+
+  def self.make_option(app_name)
+      option_html_contens = <<-"EOF"
+<html>
+        <head>
+                <title>Optio page</title>
+        </head>
+        <body>
+		<h1>Chrome extension option page</h1>
+		<p>hello chrome extension!!</p>
+        </body>
+</html>
+      EOF
+      option_html_file = File.open("./#{app_name}/option.html", "w")
+      option_html_file.write(option_html_contens)
+      option_html_file.close
+  end
 end
