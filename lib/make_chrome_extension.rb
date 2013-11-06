@@ -65,7 +65,7 @@ chrome.browserAction.onClicked.addListener(function(activeTab) {
 								});
 });
       EOF
-      background_js_file = File.open("./#{app_name}/background.html", "w")
+      background_js_file = File.open("./#{app_name}/background.js", "w")
       background_js_file.write(background_js_contents)
       background_js_file.close
   end
