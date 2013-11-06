@@ -33,8 +33,35 @@ module MakeChromeExtension
 		      }
 }
       EOF
-      manifest_file = File.open("manifest.json", "w")
+      manifest_file = File.open("./#{app_name}/manifest.json", "w")
       manifest_file.write(contents)
       manifest_file.close
   end
+  
+  def self.background_item
+      background_html_contens = <<-"EOF"
+<html>
+	<head>
+		<script type="text/javascript" src="./background.js"></script>
+	</head>
+	<body>
+	</body>
+</html>
+      EOF
+      background_html_file = File.open("./#{app_name}/background.html", "w")
+      background_html_file.write(contents)
+      background_html_file.close
+
+      background_js_contens = <<-"EOF"
+chrome.browserAction.onClicked.addListener(function(activeTab) {
+							       var newURL = "options.html";
+							       chrome.tabs.create({
+								url : newURL
+								});
+});
+      EOF
+      background_js_file = File.open("./#{app_name}/background.html", "w")
+      background_js_file.write(contents)
+      background_js_file.close
+  end  
 end
