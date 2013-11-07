@@ -1,6 +1,6 @@
 # MakeChromeExtension
 
-TODO: Write a gem description
+This gem make template of chrome extension.
 
 ## Installation
 
