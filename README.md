@@ -18,7 +18,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ require "make_chrome_extension"
+    $ MakeChromeExtension.new_template("##your app name##")
 
 ## Contributing
 
